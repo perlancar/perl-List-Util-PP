@@ -1,4 +1,4 @@
-package List::Util::PP;
+package PERLANCAR::List::Util::PP;
 
 # DATE
 # VERSION
@@ -69,7 +69,7 @@ sub minstr {
 
 =head1 SYNOPSIS
 
- use List::Util qw(max min maxstr minstr);
+ use PERLANCAR::List::Util::PP qw(max min maxstr minstr);
 
  my $max = max @list;
  my $min = min @list;
@@ -85,6 +85,10 @@ cannot use any XS module (even core ones) or in the rare case where you cannot
 use I<any> module, in which case you can copy-and-paste the routines from this
 module (or, if you use L<Dist::Zilla>, you can also use
 L<Dist::Zilla::Plugin::InsertBlock>).
+
+L<List::Util::PP> was also available as part of Scalar-List-Utils but was
+dropped (it was still included as part of perl 5.16). I plan to incorporate
+(at least some) code from the old code base [2].
 
 
 =head1 FUNCTIONS
@@ -170,4 +174,6 @@ TBD
 
 =head1 SEE ALSO
 
-L<List::Util>
+[1] L<List::Util>
+
+[2] L<https://github.com/haarg/List-Util/blob/pp/lib/List/Util/PP.pm>
