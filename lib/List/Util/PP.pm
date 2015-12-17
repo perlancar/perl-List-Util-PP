@@ -4,8 +4,10 @@ package List::Util::PP;
 # VERSION
 
 use 5.010001;
+#IFUNBUILT
 use strict;
 use warnings;
+#END IFUNBUILT
 
 use Exporter qw(import);
 our @EXPORT_OK = qw(
@@ -21,6 +23,46 @@ our @EXPORT_OK_TODO = qw(
 
     shuffle
 );
+
+# BEGIN_BLOCK: max
+sub max {
+    return undef unless @_;
+    my $res = $_[0];
+    my $i = 0;
+    while (++$i < @_) { $res = $_[$i] if $_[$i] > $res }
+    $res;
+}
+# END_BLOCK: max
+
+# BEGIN_BLOCK: maxstr
+sub maxstr {
+    return undef unless @_;
+    my $res = $_[0];
+    my $i = 0;
+    while (++$i < @_) { $res = $_[$i] if $_[$i] gt $res }
+    $res;
+}
+# END_BLOCK: maxstr
+
+# BEGIN_BLOCK: min
+sub min {
+    return undef unless @_;
+    my $res = $_[0];
+    my $i = 0;
+    while (++$i < @_) { $res = $_[$i] if $_[$i] < $res }
+    $res;
+}
+# END_BLOCK: min
+
+# BEGIN_BLOCK: minstr
+sub minstr {
+    return undef unless @_;
+    my $res = $_[0];
+    my $i = 0;
+    while (++$i < @_) { $res = $_[$i] if $_[$i] lt $res }
+    $res;
+}
+# END_BLOCK: minstr
 
 1;
 # ABSTRACT: Pure-perl implementation of List::Util
@@ -41,10 +83,13 @@ Most of the time you will not need this module. Use L<List::Util> instead. This
 module is useful for testing/benchmarking, or perhaps in the rare case where you
 cannot use any XS module (even core ones) or in the rare case where you cannot
 use I<any> module, in which case you can copy-and-paste the routines from this
-module.
+module (or, if you use L<Dist::Zilla>, you can also use
+L<Dist::Zilla::Plugin::InsertBlock>).
 
 
 =head1 FUNCTIONS
+
+For more details on each function, see List::Util.
 
 =head2 reduce
 
