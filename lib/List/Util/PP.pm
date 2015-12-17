@@ -9,54 +9,66 @@ use warnings;
 
 use Exporter qw(import);
 our @EXPORT_OK = qw(
-                       reduce any all none notall first max maxstr min minstr
-                       product sum sum0
-
-                       pairs unpairs pairkeys pairvalues pairgrep pairfirst
-                       pairmap
-
-                       shuffle
+                       max maxstr min minstr
                );
 
-sub reduce(&@) {
-    my $code = shift;
-    return undef unless @_;
-}
+our @EXPORT_OK_TODO = qw(
+    reduce any all none notall
+    product sum sum0
+
+    pairs unpairs pairkeys pairvalues pairgrep pairfirst
+    pairmap
+
+    shuffle
+);
 
 1;
 # ABSTRACT: Pure-perl implementation of List::Util
 
 =head1 SYNOPSIS
 
- # use like you would use List::Util
- use List::Util qw(first max min);
+ use List::Util qw(max min maxstr minstr);
 
- say "There is an odd number" if first { $_ % 2 } @nums;
  my $max = max @list;
  my $min = min @list;
 
 
 =head1 DESCRIPTION
 
-Normally you will not need this module. Use L<List::Util> instead. This module
-is useful for testing/benchmarking, or perhaps on a rare case where you cannot
-use XS module, even core ones. Or I<any> module, in which case you can
-copy-and-paste the routines from this module.
+B<NOTE: EARLY RELEASE, NOT ALL FUNCTIONS HAVE BEEN IMPLEMENTED>
+
+Most of the time you will not need this module. Use L<List::Util> instead. This
+module is useful for testing/benchmarking, or perhaps in the rare case where you
+cannot use any XS module (even core ones) or in the rare case where you cannot
+use I<any> module, in which case you can copy-and-paste the routines from this
+module.
 
 
 =head1 FUNCTIONS
 
 =head2 reduce
 
+TBD
+
 =head2 any
+
+TBD
 
 =head2 all
 
+TBD
+
 =head2 none
+
+TBD
 
 =head2 notall
 
+TBD
+
 =head2 first
+
+TBD
 
 =head2 max
 
@@ -68,25 +80,47 @@ copy-and-paste the routines from this module.
 
 =head2 product
 
+TBD
+
 =head2 sum
+
+TBD
 
 =head2 sum0
 
+TBD
+
 =head2 pairs
+
+TBD
 
 =head2 unpairs
 
+TBD
+
 =head2 pairkeys
+
+TBD
 
 =head2 pairvalues
 
+TBD
+
 =head2 pairgrep
+
+TBD
 
 =head2 pairfirst
 
+TBD
+
 =head2 pairmap
 
+TBD
+
 =head2 shuffle
+
+TBD
 
 
 =head1 SEE ALSO
