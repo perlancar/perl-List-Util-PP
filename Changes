@@ -1,5 +1,10 @@
 Revision history for PERLANCAR-List-Util-PP
 
+0.03    2015-12-18 (PERLANCAR)
+
+	- Use code from old List::Util::PP.
+
+
 0.02    2015-12-18 (PERLANCAR)
 
         - Rename module/dist from List-Util-PP to PERLANCAR-List-Util-PP before
