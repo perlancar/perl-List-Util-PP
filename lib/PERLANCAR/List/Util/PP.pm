@@ -37,7 +37,7 @@ sub import {
 
   # (RT88848) Touch the caller's $a and $b, to avoid the warning of
   #   Name "main::a" used only once: possible typo" warning
-  no strict 'refs';
+  #no strict 'refs';
   ${"${pkg}::a"} = ${"${pkg}::a"};
   ${"${pkg}::b"} = ${"${pkg}::b"};
 
@@ -237,8 +237,8 @@ sub product (@) {
 sub reduce (&@) {
   my $f = shift;
   unless ( ref $f && eval { \&$f } ) {
-    require Carp;
-    Carp::croak("Not a subroutine reference");
+    #require Carp;
+    die "Not a subroutine reference";
   }
 
   return shift unless @_ > 1;
