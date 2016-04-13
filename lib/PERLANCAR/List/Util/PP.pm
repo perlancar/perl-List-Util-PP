@@ -12,6 +12,7 @@ require Exporter;
 our @EXPORT_OK = qw(
                        all
                        any
+                       first
                        max
                        maxstr
                        min
@@ -61,6 +62,16 @@ sub any (&@) {
   return 0;
 }
 # END_BLOCK: any
+
+# BEGIN_BLOCK: first
+sub first(&@) {
+    my $code = shift;
+    for (@_) {
+        return $_ if $code->($_);
+    }
+    undef;
+}
+# END_BLOCK: first
 
 # BEGIN_BLOCK: max
 sub max(@) {
