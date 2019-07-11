@@ -1,22 +1,22 @@
-0.04    2015-12-18 (PERLANCAR)
+0.04    2015-12-18  Released-By: PERLANCAR
 
 	- No functional changes.
 
 	- Remove usage of Carp and strict.
 
 
-0.03    2015-12-18 (PERLANCAR)
+0.03    2015-12-18  Released-By: PERLANCAR
 
 	- Use code from old List::Util::PP.
 
 
-0.02    2015-12-18 (PERLANCAR)
+0.02    2015-12-18  Released-By: PERLANCAR
 
         - Rename module/dist from List-Util-PP to PERLANCAR-List-Util-PP before
           List::Util::PP is already taken (my bad, didn't check beyond normal
           CPAN search).
 
 
-0.01    2015-12-17 (PERLANCAR)
+0.01    2015-12-17  Released-By: PERLANCAR
 
         - First early release.
